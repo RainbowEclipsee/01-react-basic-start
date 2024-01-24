@@ -1,4 +1,4 @@
-export const ways = [
+export const blocks = [
   {
     title: 'Фильтрация информации и технологий.',
     description:
