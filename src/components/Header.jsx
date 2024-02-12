@@ -1,8 +1,12 @@
+import { useState } from 'react'
 import headerLogo from '/rocket.svg'
 
 function Header() {
 
-  const time = new Date()
+  const[time, setTime] = useState(new Date())
+
+  setInterval(() => setTime(new Date()), 1000)
+
   const logoName = 'rocket'
   return (
     <header>

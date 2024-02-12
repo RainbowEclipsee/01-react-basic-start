@@ -1,8 +1,8 @@
 import './Button.css'
 
-function Button({ children, btnClick }) {
+function Button({ children, onClick, isActive }) {
   return (
-    <button className="button active" onClick={btnClick}>
+    <button className={isActive ? 'button active' : 'button'} onClick={onClick}>
       {children}
     </button>
   )
