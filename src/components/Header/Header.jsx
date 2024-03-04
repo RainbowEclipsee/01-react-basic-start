@@ -2,6 +2,7 @@ import { useState } from 'react'
 import headerLogo from '/rocket.svg'
 import './Header.css'
 import styled from 'styled-components'
+import { useEffect } from 'react'
 
 const HeaderCountainer = styled.header`
   height: 50px;
@@ -17,7 +18,15 @@ function Header() {
 
   const[time, setTime] = useState(new Date())
 
-  setInterval(() => setTime(new Date()), 1000)
+  useEffect(() => {
+    const interval = setInterval(() => setTime(new Date()), 1000)
+
+    return() => {
+      clearInterval(interval)
+    }
+  }, [])
+
+
 
   const logoName = 'rocket'
   return (
